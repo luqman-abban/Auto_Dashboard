@@ -17,7 +17,7 @@ st.set_page_config(
 # GOOGLE SHEETS DATA LOADER
 # ─────────────────────────────────────────────
 def load_data():
-    SHEET_ID = "YOUR_SHEET_ID_HERE"
+    SHEET_ID = "1zJfFeIWiy3zc3BwGmsPug3_dAwtUplI2"
     GID = "307200564"
 
     url = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid={GID}"
