@@ -62,7 +62,7 @@ col1, col2, col3, col4 = st.columns(4)
 
 col1.metric("Total Responses", total)
 col2.metric("Very Likely %", f"{pct_likely}%")
-col3.metric("Toyota Best Display %", f"{pct_best}%")
+col3.metric("Brand Best Display %", f"{pct_best}%")
 col4.metric("Overall Avg Score", overall_avg)
 
 st.divider()
