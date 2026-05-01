@@ -9,7 +9,7 @@ import io
 # PAGE CONFIG
 # ─────────────────────────────────────────────
 st.set_page_config(
-    page_title="Toyota Experience Dashboard",
+    page_title="Autoshow Experience Dashboard",
     layout="wide"
 )
 
@@ -34,7 +34,7 @@ df = load_data()
 # ─────────────────────────────────────────────
 # TITLE
 # ─────────────────────────────────────────────
-st.title("🚗 Toyota Experience Dashboard")
+st.title("🚗 Autoshow Experience Dashboard")
 
 # ─────────────────────────────────────────────
 # KPI CALCULATIONS
@@ -50,9 +50,9 @@ def avg(col):
     return round(s.mean()[0], 2) if len(s) else 0
 
 
-pct_likely = pct("Q2.4 - How likely are you to consider Toyota for your next vehicle?", "Very likely")
-pct_best = pct("Q6.3 - Which brand had the best display at the show?", "Toyota")
-pct_owners = pct("Q2.1 - Do you currently own or lease a Toyota?", "Yes")
+pct_likely = pct("Q2.4 - How likely are you to consider brand for your next vehicle?", "Very likely")
+pct_best = pct("Q6.3 - Which brand had the best display at the show?", "brand")
+pct_owners = pct("Q2.1 - Do you currently own or lease a brand?", "Yes")
 overall_avg = avg("Q3.4_9 - Overall experience")
 
 # ─────────────────────────────────────────────
@@ -82,7 +82,7 @@ exp_df.columns = ["Rating", "Count"]
 fig1 = px.bar(exp_df, x="Rating", y="Count", title="Overall Experience")
 
 # Intent
-intent_df = vc("Q2.4 - How likely are you to consider Toyota for your next vehicle?")
+intent_df = vc("Q2.4 - How likely are you to consider brand for your next vehicle?")
 intent_df.columns = ["Intent", "Count"]
 
 fig2 = px.pie(intent_df, names="Intent", values="Count", title="Purchase Intent")
